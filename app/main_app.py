@@ -2,6 +2,7 @@ import datetime
 from datetime import date
 import sys
 import re
+import os
 
 import requests as requests
 from PyQt6.QtWidgets import QApplication, QMessageBox, QDialog, QLabel, QPushButton, QVBoxLayout
@@ -29,7 +30,12 @@ class CustomMessageBox(QDialog):
         self.setWindowTitle('Уведомление')
         self.setFixedSize(400, 200)
 
-        self.setWindowIcon(QIcon('C:\\Users\\YoungGreek\\PycharmProjects\\OpPIMain\\app\\forms\\book_icon.png'))
+        working_dir = os.getcwd()
+        book_icon_path = os.path.join(working_dir,
+                                      "_internal",
+                                      "icons",
+                                      "book_icon.png")
+        self.setWindowIcon(QIcon(book_icon_path))
 
         layout = QVBoxLayout()
         label = QLabel(message)

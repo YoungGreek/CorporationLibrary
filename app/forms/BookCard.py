@@ -33,6 +33,7 @@ class BookCard(QWidget):
     # Инициализация объекта карточка книги
     def __init__(self, name, author, genres, photo_path, description, ISBN, data, user_login):
         super().__init__()
+        self.frame = None
         self.main_layout = None
         self.label_photo = None
         self.label_name = None
